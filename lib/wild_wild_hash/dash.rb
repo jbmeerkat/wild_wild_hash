@@ -19,8 +19,8 @@ module WildWildHash
     def self.property(name, options={})
       @options ||= {}
       [:default, :required].each do |type|
+        @options[type] ||= {}
         if options[type]
-          @options[type] ||= {}
           @options[type][name] = options[type]
         end
       end
